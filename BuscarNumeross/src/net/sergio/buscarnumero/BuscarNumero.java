@@ -2,8 +2,8 @@ package net.sergio.buscarnumero;
 
 public class BuscarNumero {
 
-	private static final int ESCOLLIT = 459999;
-	private static final int MAXIMNUMEROS = 500000;
+	private static final int ESCOLLIT = 859999;
+	private static final int MAXIMNUMEROS = 10000000;
 
 	public static void main(String[] args) {
 		int numeroACercar = ESCOLLIT;
@@ -14,7 +14,7 @@ public class BuscarNumero {
 		long startTime = System.currentTimeMillis();
 		buscarNumero(numeroACercar, llistaNumeros);
 		long endTime = System.currentTimeMillis();
-		System.out.println("El temps d'execució es " + (endTime-startTime) + "ms");
+		System.out.println("El temps d'execuciï¿½ es " + (endTime-startTime) + "ms");
 		System.out.println("Temps inicial recollit " + endTime);
 		System.out.println("Temps final recollit " + startTime);
 	}
@@ -23,11 +23,20 @@ public class BuscarNumero {
 		boolean hoes = false;
 		int index = 0;
 		while (!hoes) {
-			if (llistaNumeros[index]==numeroACercar) {
-				hoes = true;
+			if (numeroACercar<100000) {
+				if (llistaNumeros[index]==numeroACercar) {
+					hoes = true;
+				} else {
+					index ++;
+				}
 			} else {
-				index ++;
+				if (llistaNumeros[index]==numeroACercar) {
+					hoes = true;
+				} else {
+					index ++;
+				}
 			}
+			
 		}
 	}
 
