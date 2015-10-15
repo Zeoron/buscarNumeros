@@ -23,10 +23,18 @@ public class BuscarNumero {
 		boolean hoes = false;
 		int index = 0;
 		while (!hoes) {
-			if (llistaNumeros[index]==numeroACercar) {
-				hoes = true;
+			if (numeroACercar<100000) {
+				if (llistaNumeros[index]==numeroACercar) {
+					hoes = true;
+				} else {
+					index ++;
+				}
 			} else {
-				index ++;
+				if (llistaNumeros[index]==numeroACercar) {
+					hoes = true;
+				} else {
+					index ++;
+				}
 			}
 		}
 	}
